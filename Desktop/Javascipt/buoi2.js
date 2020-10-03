@@ -50,4 +50,7 @@ console.log(a>b) */
 /*var Teo ={ age: 10 }
 var Ti ={ age: 10 }
 console.log(Teo == Ti)*/
-console.log(undefined +1)
+//console.log(undefined +1)
+var a = 5
+var b = "5"
+console.log( a ===b)
