@@ -51,6 +51,15 @@ console.log(a>b) */
 var Ti ={ age: 10 }
 console.log(Teo == Ti)*/
 //console.log(undefined +1)
-var a = 5
+/*var a = 5
 var b = "5"
-console.log( a ===b)
+console.log( a ===b)*/
+//console.log (typeof null)
+// 9: cau dieu kien
+var a =5
+var b = 10
+if(a>b){
+    console.log("a lon hon b")
+} else {
+    console.log("a nho hon hoac bang b")
+}
