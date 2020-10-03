@@ -35,11 +35,19 @@ console.log(KQ)*/
 //doSth (" Chay bo ")
 console.log(doSth("chay bo"))*/
 // 7 : Object method
-const Teo = {
+ /*const Teo = {
     name: " Nguyen Van Teo",
     age:10,
     info: function (){
         console.log("ten: " + this.name +". Tuoi" + this.age);
     }
 }
-Teo.info()
+Teo.info()*/
+// 8: phep so sanh
+ /*var a = "5"
+var b =  "10"
+console.log(a>b) */
+/*var Teo ={ age: 10 }
+var Ti ={ age: 10 }
+console.log(Teo == Ti)*/
+console.log(undefined +1)
