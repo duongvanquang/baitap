@@ -91,5 +91,36 @@ console.log(arrNums)*/
 // arrNums.splice(1,0,50)
 // xoa phan tu o giua
 // arrNums.splice (1,3)
-
+//14: callback la tham so
+/*function TingTong (a,b){
+    return a + b
+}
+function inThongTin (cb){
+    console.log(cb)
+}
+inThongTin(TingTong(10 ,5))*/
+/*function insochan (){
+    for (var i =1; i<=100;i++){
+        if (i %2 ==0){
+            console.log(i)
+        }
+    }
+}
+function inso (sochia,sodu){
+    for (var i =0;i<=100;i++){
+        if(i % sochia ===sodu){
+            console.log(i)
+        }
+    }
+}
+inso (1)*/
+function inso (cb){
+    for ( var i = 1 ; i<= 100;i++){
+        const dk = cb(i)
+        if (dk) console.log(i)
+    }
+}
+inso (function(i){
+    return Math.sqrt(i) % 1==0
+})
 
