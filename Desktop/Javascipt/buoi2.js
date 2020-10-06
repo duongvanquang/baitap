@@ -58,6 +58,7 @@ console.log( a ===b)*/
 // 9: cau dieu kien
 var a =5
 var b = 10
+// 9 gia tri tuong trung cho false: 0, false, undefined, null,NaN, "", ! cho gia tri khac khong
 if(a>b){
     console.log("a lon hon b")
 } else {
