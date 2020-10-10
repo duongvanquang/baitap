@@ -131,7 +131,7 @@ var voters = [
        {name: 'Zack', age: 19, voted: false}
      ];
 console.log(totalVotes(voters))*/
-function countOccurrences (arr){
+/*function countOccurrences (arr){
     const result = arr.reduce(function(accumulator , currentValue){
         if (currentValue in accumulator){
             accumulator[currentValue]++
@@ -142,5 +142,9 @@ function countOccurrences (arr){
     },{})
     console.log(result)
 }
-countOccurrences(["a","b","c","a","a","b","a"])
+countOccurrences(["a","b","c","a","a","b","a"])*/
+// 18: Ham sort
+const numbers = ["Teo","A Tuan","Ba","Ca","Da"]
+const newNumbers = numbers.sort ()
+console.log(newNumbers)
 
