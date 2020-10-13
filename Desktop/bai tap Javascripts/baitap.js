@@ -90,3 +90,11 @@ namesOnly([
 
      })
     console.log(newArr)*/
+    function findFirstEvenNumber (arr){
+        return arr.find((value) =>{
+            if(value % 2 ===0){
+                return value
+            }
+        })
+    }
+    console.log(findFirstEvenNumber([1,4,6,7]))
