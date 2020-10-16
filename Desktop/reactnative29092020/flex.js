@@ -13,6 +13,7 @@ export default class flex extends Component {
       <View style = {{ flex:1, flexDirection:'column',backgroundColor:'yellow'}}>
         <Text> flex </Text>
       </View>
+      <View></View>
     );
   }
 }
