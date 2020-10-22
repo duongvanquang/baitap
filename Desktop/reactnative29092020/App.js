@@ -1,27 +1,22 @@
-import React, { Component } from 'react';
-import { View, Text, AppRegistry } from 'react-native';
+import React, {Component} from 'react';
+ import {Text, View, Platform} from 'react-native';
+ import {SafeAreaView} from 'react-native';
+ import MainScreen from './src/screens/MainScreen';
 
-export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  }
-
-  render() {
-    return (
-      <View style={{ flex: 1, backgroundColor: 'yellow', flexDirection: 'column' }}>
-        <Text style={{ flex: 0.25, backgroundColor: 'red', justifyContent: 'space-between', alignItems: 'center' }}> A </Text>
-        <Text style={{ flex: 0.25, backgroundColor: 'blue', justifyContent: 'center', alignItems: 'center' }}> B </Text>
-        <Text style={{ flex: 0.25, backgroundColor: 'gray', justifyContent: 'center', alignItems: 'center' }}> C </Text>
-        <Text style={{ flex: 0.25, backgroundColor: 'green', justifyContent: 'center', alignItems: 'center' }}> D </Text>
-        <View style={{ flex: 1, backgroundColor: 'powderblue', flexDirection: 'row' }}>
-          <Text style={{ flex: 0.25, backgroundColor: 'skyblue', justifyContent: 'center', alignItems: 'flex-end' }}> A </Text>
-          <Text style={{ flex: 0.25, backgroundColor: 'steelblue', justifyContent: 'center', alignContent: 'center' }}> B </Text>
-          <Text style={{ flex: 0.25, backgroundColor: 'red', justifyContent: 'center', alignItems: 'center' }}> C </Text>
-          <Text style={{ flex: 0.25, backgroundColor: 'yellow' }}> D </Text>
-        </View>
-      </View>
-    );
-  }
-}
+ export default class App extends Component {
+   render() {
+     return (
+       <View style={{marginTop: Platform.OS === 'ios' ? 50 : 0}}>
+         <View
+           style={{backgroundColor: '#f20', borderRadius: 5, borderWidth: 5}}>
+           <Text style={{fontSize: 20, fontWeight: '200', fontStyle: 'italic'}}>
+             View 1
+           </Text>
+         </View>
+       </View>
+       <SafeAreaView style={{flex: 1}}>
+         <MainScreen />
+       </SafeAreaView>
+     );
+   }
+ }
