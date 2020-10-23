@@ -10,6 +10,12 @@ export default class Box extends Component {
 
     };
   }
+  shouldComponentUpdate (nextProps,nextState){
+    if(nextState.count !== this.state.count){
+      return false;
+    }
+    return true;
+  }
 
   render() {
     console.log('render');
@@ -24,8 +30,15 @@ export default class Box extends Component {
                 this.setState({ count: this.state.count + 1 })
                 console.log(this.setState.count);
               }}
-              style={{ borderRadius: 10, backgroundColor: 'green' }}>
-              <Text style={{ fontSize: 20, padding: 10, color: 'white' }}> InCrease </Text>
+              style={{
+                borderRadius: 10,
+                backgroundColor: 'green'
+              }}>
+              <Text style={{
+                fontSize: 20,
+                padding: 10,
+                color: 'white'
+              }}> InCrease </Text>
             </TouchableOpacity>
             <TouchableOpacity style={{ borderRadius: 10, backgroundColor: 'red' }}>
               <TouchableOpacity onPress={() => {
