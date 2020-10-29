@@ -17,7 +17,7 @@ export default class MainScreen extends Component {
             txtEn: '',
             txtVn: '',
             shouldShowForm: false,
-            filterMode:null,
+            filterMode: null,
         }
     }
     toggleWord = word => {
@@ -103,6 +103,12 @@ export default class MainScreen extends Component {
         return this.renderForm(this.state.shouldShowForm);
     }
     renderItemWord = word => {
+        const {filterMode} = this.state;
+        if(filterMode === 'Show_Forgot' && !word.isMemorized){
+            return null;
+        } else if( filterMode === 'Show_Memorized' && word.isMemorized){
+            return null;
+        }
         return (
             <View style={styles.containerWord} key={word.id.toString()}>
                 <View style={styles.containerText}>
@@ -135,24 +141,9 @@ export default class MainScreen extends Component {
         return (
             <View style={styles.containerPickerStyle}>
                 <RNPickerSelect
-                onDonePress={()=>{
-                    const {words,filterMode}= this.state
-                    const newWords = words.filter(word =>{
-                        if(this.state.filterMode === 'Show_All'){
-                            return true;
-                        } else if (filterMode ==='Show_Forgot' && word.isMemorized){
-                            return true;
-                        } else if(filterMode ==='Show_Memoriz' && !word.isMemorized){
-                            return true;
-                        } else {
-                            return false;
-                        }
-                    });
-                    this.setState({words:newWords})
-                }}
                     onValueChange={value => {
-                        this.state.filterMode = value
-                     }}
+                        this.setState({filterMode: value});
+                    }}
                     items={[
                         { label: 'Show All', value: 'Show_All' },
                         { label: 'Show Forgot', value: 'Show_Forgot' },
