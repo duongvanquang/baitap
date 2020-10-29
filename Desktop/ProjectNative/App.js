@@ -4,15 +4,16 @@ import MainScreen from './src/screens/MainScreen';
 import Box from './src/components/Box';
 import Form from './src/components/Form';
 import Filter from './src/components/Filter';
-
+import Child from './src/components/Child';
 export default class App extends Component {
   render() {
     return (
       <SafeAreaView style ={{ flex:1}}>
-          <MainScreen />
-       {/* <Box /> */}
+          {/* <MainScreen />*/}
+        <Box /> 
        { /*<Form />*/}
        {/* <Filter /> */}
+       {/* <Child /> */}
       </SafeAreaView>
     );
   }

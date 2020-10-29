@@ -1,103 +1,69 @@
 import React, { Component } from 'react';
-import { View, Text,StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import Child from './Child';
+
 
 export default class Box extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        console.log('constructor');
-        this.state={
-            count:0,
+        this.state = {
+            count: 0,
         };
     }
-    shouldComponentUpdate ( nextProps,nextState){
-        if(nextState.count !== this.state.count){
-            return false;
-        }
-        return true;
+    onInCrease = ()=>{
+        this.setState({count:this.state.count + 1})
     }
-  render() {
-    return (
-      <View style ={ styles.container}>
-          <Text style ={ styles.textCount}>Count:{this.state.count}</Text>
-          <View style = { styles.eventgroup}>
-              <TouchableOpacity 
-              onPress={ ()=>{
-                  this.setState({ count: this.state.count + 1})
-                  console.log(this.state.count)
-              }}
-              style ={ styles.boxIncrease}
-              activeOpacity={ 0.1}>
-                  <Text style ={ styles.inCrease}> Increase</Text>
-              </TouchableOpacity>
-              <TouchableOpacity onPress={ ()=>{
-                  this.setState({ count: this.state.count + 1})
-                  console.log(this.state.count)
-              }}
-              style = { styles.boxDescrease}
-              activeOpacity={ 0.1}>
-                  <Text style ={ styles.Descrease}> Descrease</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-              onPress={ ()=>{
-                this.setState({ count: this.state.count + 1})
-                console.log(this.state.count)
-            }}
-               style ={ styles.boxReset}
-              activeOpacity={0.1}>
-                  <Text style ={ styles.Reset}>Reset</Text>
-              </TouchableOpacity>
-
-          </View>
-        
-      </View>
-    );
-  }
-  componentDidMount (){
-      console.log('componentDidMount');
-  }
+    render() {
+        return (
+            <View style={styles.container}>
+                <Text style={styles.textCount}>Count:{this.state.count}</Text>
+                <Child onInCrease ={ this.onInCrease}/>
+            </View>
+        );
+    }
 }
 const styles = StyleSheet.create({
-    container:{
-        flex:1,
-        justifyContent:'center',
-        alignItems:'center'
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
-    textCount:{
-        fontSize:30,
-        color:'red',
+    textCount: {
+        fontSize: 30,
+        color: 'red',
     },
-    inCrease:{
-        fontSize:20,
-        padding:10,
-        color:'white'
+    inCrease: {
+        fontSize: 20,
+        padding: 10,
+        color: 'white'
     },
-    Descrease:{
-        fontSize:20,
-        padding:10,
-        color:'white'
+    Descrease: {
+        fontSize: 20,
+        padding: 10,
+        color: 'white'
     },
-    Reset:{
-        fontSize:20,
-        padding:10,
-        color:'white'
+    Reset: {
+        fontSize: 20,
+        padding: 10,
+        color: 'white'
     },
-    eventgroup:{
-        width:'100%',
-        flexDirection:'row',
-        justifyContent:'space-evenly',
-        marginTop:20
+    eventgroup: {
+        width: '100%',
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        marginTop: 20
     },
-    boxIncrease:{
-        borderRadius:10,
-        backgroundColor:'green'
+    boxIncrease: {
+        borderRadius: 10,
+        backgroundColor: 'green'
     },
-    boxDescrease:{
-        borderRadius:10,
-        backgroundColor:'red'
+    boxDescrease: {
+        borderRadius: 10,
+        backgroundColor: 'red'
     },
-    boxReset:{
-        borderRadius:10,
-        backgroundColor:'blue'
+    boxReset: {
+        borderRadius: 10,
+        backgroundColor: 'blue'
     }
 
 });
