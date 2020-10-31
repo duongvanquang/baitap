@@ -9,11 +9,12 @@ export default class App extends Component {
   render() {
     return (
       <SafeAreaView style ={{ flex:1}}>
-          {/* <MainScreen />*/}
-        <Box /> 
+           <MainScreen />
+        { /* <Box /> */}
        { /*<Form />*/}
        {/* <Filter /> */}
        {/* <Child /> */}
+       {/*<Word />*/}
       </SafeAreaView>
     );
   }
